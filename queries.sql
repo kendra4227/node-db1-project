@@ -8,7 +8,9 @@ WHERE PostalCode LIKE '%1010'
 SELECT Phone FROM Suppliers
 WHERE SupplierID is 11
 -- List first 10 orders placed, sorted descending by the order date
-
+SELECT * FROM Orders 
+ORDER BY OrderDate DESC, 
+LIMIT 10;
 -- Find all customers that live in London, Madrid, or Brazil
 SELECT * FROM Customers
 WHERE City = "London" OR City = "Madrid" OR City = "Brazil" 
@@ -24,3 +26,5 @@ SELECT COUNT (DISTINCT City)
 FROM Customers
  
 -- (Stretch) Find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name
+SELECT * FROM Suppliers 
+WHERE length(SupplierName) >20
